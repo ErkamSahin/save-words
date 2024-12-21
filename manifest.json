@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Kelime Kaydetme Uygulaması",
+    "version": "1.0",
+    "description": "Kelime kaydedebilir, silebilir ve imleci üzerine getirdiğinde sarıya boyanmasını sağlayabilirsiniz.",
+    "permissions": ["storage", "activeTab"],
+    "host_permissions": ["<all_urls>"],
+    "action": {
+      "default_popup": "index.html",
+      "default_icon": {
+        "16": "images/icon16.png"
+      }
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "icons": {
+      "16": "images/icon16.png"
+    },
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["content.js"]
+        }
+      ]
+  }
+  
